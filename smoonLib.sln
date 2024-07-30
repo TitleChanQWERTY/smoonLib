@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smoonLib", "smoonLib\smoonLib.csproj", "{735CE057-9FC3-4B39-A404-8DB36A168049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{58E2789F-98F4-49FA-8D8F-ACE0F7FA88F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{735CE057-9FC3-4B39-A404-8DB36A168049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735CE057-9FC3-4B39-A404-8DB36A168049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735CE057-9FC3-4B39-A404-8DB36A168049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735CE057-9FC3-4B39-A404-8DB36A168049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E2789F-98F4-49FA-8D8F-ACE0F7FA88F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E2789F-98F4-49FA-8D8F-ACE0F7FA88F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E2789F-98F4-49FA-8D8F-ACE0F7FA88F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E2789F-98F4-49FA-8D8F-ACE0F7FA88F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
