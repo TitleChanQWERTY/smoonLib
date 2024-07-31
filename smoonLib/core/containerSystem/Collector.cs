@@ -19,7 +19,6 @@ public static class Collector
         if (_containers.Count == 0) return 0;
         if (index > _containers.Count) return -1;
         _containerIndex = index;
-        _containers[_containerIndex].Awake();
         return 0;
     }
 

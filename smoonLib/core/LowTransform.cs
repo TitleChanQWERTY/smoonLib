@@ -6,12 +6,11 @@ public struct LowTransform
 {
     public Vector2 position;
     public SizeFloat size;
-    public SizeFloat scale;
+    public SizeFloat scale = new SizeFloat(0, 0);
 
-    public LowTransform(Vector2 position, SizeFloat size, SizeFloat? scale = null)
+    public LowTransform(Vector2 position, SizeFloat size)
     {
         this.position = position;
         this.size = size;
-        this.scale = scale ?? new SizeFloat(0, 0);
     }
 }
