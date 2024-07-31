@@ -8,11 +8,14 @@ public static class MemoryManager
     internal static IntPtr sdlRendererMemory = IntPtr.Zero;
 
     internal static readonly Dictionary<string, IntPtr> textureCollect = new();
+
+    internal static IntPtr CashedTexture = IntPtr.Zero;
     
     private static void CleanMemory()
     {
         DebugUtility.DebugLog("Clean MEMORY!");
         foreach (var texture in textureCollect) Texture.DestroyTextureFromMemory(texture.Value);
+        Texture.DestroyTextureFromMemory(CashedTexture);
         SDL.SDL_DestroyRenderer(sdlRendererMemory);
         SDL.SDL_DestroyWindow(sdlWindowMemory);
         SDL_image.IMG_Quit();

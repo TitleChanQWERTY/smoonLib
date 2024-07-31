@@ -15,6 +15,7 @@ public static class Engine
             SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
         if (MemoryManager.sdlWindowMemory == IntPtr.Zero) DebugUtility.DebugException("Can't create Window");
         else if (MemoryManager.sdlRendererMemory == IntPtr.Zero) DebugUtility.DebugException("Can't create Renderer");
+        MemoryManager.CashedTexture = Texture.CreateEmptyTexture();
         Collector.ChangeContainer(0);
     }
 
