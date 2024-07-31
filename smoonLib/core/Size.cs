@@ -2,24 +2,24 @@ namespace smoonLib.core;
 
 public struct SizeInt
 {
-    public int X;
-    public int Y;
+    public int width;
+    public int height;
 
-    public SizeInt(int sizeX, int sizeY)
+    public SizeInt(int width, int height)
     {
-        X = sizeX;
-        Y = sizeY;
+        this.width = width;
+        this.height = height;
     }
 }
 
 public struct SizeFloat
 {
-    public float X;
-    public float Y;
+    public float width;
+    public float height;
 
-    public SizeFloat(float sizeX, float sizeY)
+    public SizeFloat(float width, float height)
     {
-        X = sizeX;
-        Y = sizeY;
+        this.width = width;
+        this.height = height;
     }
 }

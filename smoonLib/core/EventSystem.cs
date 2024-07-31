@@ -12,7 +12,7 @@ internal static class EventSystem
             switch (e.type)
             {
                 case SDL.SDL_EventType.SDL_QUIT:
-                    Engine.IsRunning = false;
+                    App.CloseApp();
                     break;
             }
         }

@@ -9,9 +9,5 @@
         <Title>smoonLib</Title>
         <Authors>TitleChanQWERTY</Authors>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include="core\renderSystem\" />
-    </ItemGroup>
     
 </Project>

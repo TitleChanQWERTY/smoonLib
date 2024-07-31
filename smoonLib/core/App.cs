@@ -12,8 +12,8 @@ public static class App
         set
         {
             _appWindowName = value;
-            if (MemoryManager.SdlWindowMemory == IntPtr.Zero) return;
-            SDL.SDL_SetWindowTitle(MemoryManager.SdlWindowMemory, _appWindowName);
+            if (MemoryManager.sdlWindowMemory == IntPtr.Zero) return;
+            SDL.SDL_SetWindowTitle(MemoryManager.sdlWindowMemory, _appWindowName);
         }
     }
     
@@ -25,10 +25,16 @@ public static class App
         set
         {
             _appWindowSize = value;
-            if (MemoryManager.SdlWindowMemory == IntPtr.Zero) return;
-            SDL.SDL_SetWindowSize(MemoryManager.SdlWindowMemory, _appWindowSize.X, _appWindowSize.Y);
-            SDL.SDL_GetWindowPosition(MemoryManager.SdlWindowMemory, out int x, out int y);
-            SDL.SDL_SetWindowPosition(MemoryManager.SdlWindowMemory, x, y);
+            if (MemoryManager.sdlWindowMemory == IntPtr.Zero) return;
+            SDL.SDL_SetWindowSize(MemoryManager.sdlWindowMemory, _appWindowSize.width, _appWindowSize.height);
+            SDL.SDL_GetWindowPosition(MemoryManager.sdlWindowMemory, out int x, out int y);
+            SDL.SDL_SetWindowPosition(MemoryManager.sdlWindowMemory, x, y);
         }
+    }
+
+    public static void CloseApp()
+    {
+        Engine.IsRunning = false;
+        DebugUtility.DebugWarning("Client starting close operation");
     }
 }

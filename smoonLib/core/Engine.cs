@@ -9,9 +9,12 @@ public static class Engine
     private static void InitEngine()
     {
         SDL.SDL_Init(SDL.SDL_INIT_VIDEO);
-        MemoryManager.SdlWindowMemory = SDL.SDL_CreateWindow(App.AppWindowName, SDL.SDL_WINDOWPOS_CENTERED, SDL.SDL_WINDOWPOS_CENTERED, App.AppWindowSize.X, App.AppWindowSize.Y, SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN);
-        MemoryManager.SdlRendererMemory = SDL.SDL_CreateRenderer(MemoryManager.SdlWindowMemory, -1,
+        SDL_image.IMG_Init(SDL_image.IMG_InitFlags.IMG_INIT_PNG | SDL_image.IMG_InitFlags.IMG_INIT_JPG);
+        MemoryManager.sdlWindowMemory = SDL.SDL_CreateWindow(App.AppWindowName, SDL.SDL_WINDOWPOS_CENTERED, SDL.SDL_WINDOWPOS_CENTERED, App.AppWindowSize.width, App.AppWindowSize.height, SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN);
+        MemoryManager.sdlRendererMemory = SDL.SDL_CreateRenderer(MemoryManager.sdlWindowMemory, -1,
             SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
+        if (MemoryManager.sdlWindowMemory == IntPtr.Zero) DebugUtility.DebugException("Can't create Window");
+        else if (MemoryManager.sdlRendererMemory == IntPtr.Zero) DebugUtility.DebugException("Can't create Renderer");
         Collector.ChangeContainer(0);
     }
 
@@ -26,10 +29,10 @@ public static class Engine
         while (IsRunning)
         {
             EventSystem.UpdateEvent();
-            SDL.SDL_RenderClear(MemoryManager.SdlRendererMemory);
+            SDL.SDL_RenderClear(MemoryManager.sdlRendererMemory);
             Collector.UpdateState();
             Collector.UpdateContainer();
-            SDL.SDL_RenderPresent(MemoryManager.SdlRendererMemory);
+            SDL.SDL_RenderPresent(MemoryManager.sdlRendererMemory);
         }
         MemoryManager.QuitApp();
     }

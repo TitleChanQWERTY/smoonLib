@@ -8,17 +8,19 @@ public static class Collector
 
     private static IContainer _currentContainer;
 
-    public static void AddToCollector(IContainer container)
+    public static IContainer AddToCollector(IContainer container)
     {
         _containers.Add(container);
+        return container;
     }
 
-    public static void ChangeContainer(int index)
+    public static int ChangeContainer(int index)
     {
-        if (_containers.Count == 0) return;
-        if (index > _containers.Count) DebugUtility.DebugException("Index more than containers list");
+        if (_containers.Count == 0) return 0;
+        if (index > _containers.Count) return -1;
         _containerIndex = index;
         _containers[_containerIndex].Awake();
+        return 0;
     }
 
     internal static void UpdateState()
