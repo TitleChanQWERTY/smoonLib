@@ -51,6 +51,7 @@ public static class Engine
             Collector.UpdateContainer();
             Rendering.RenderCollection();
             SDL.SDL_RenderPresent(MemoryManager.sdlRendererMemory);
+            EventSystem.CleanEvent();
             
             // end section
             Time.frameCount++;
